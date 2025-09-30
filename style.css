@@ -172,7 +172,6 @@ nav {
   padding-bottom: 2px;
 }
 
-
 /* Individual nav link */
 .nav__link {
   margin: 0 24px;
@@ -291,7 +290,6 @@ nav {
   align-items: center;
 }
 
-
 /* Individual modal link */
 .modal__link {
   color: #1a202c;
@@ -338,8 +336,7 @@ header .row {
 /* Layout: places description and image side by side,
      centers them vertically, and pushes them apart */
 
-
-/* Left side description text */     
+/* Left side description text */
 .header__description {
   width: 40%;
 }
@@ -365,7 +362,9 @@ header .row {
 /* Email button (right side of form) */
 .header__email--btn {
   width: 160px;
-  height: calc(100% - 16px); /* Slightly shorter than the input for padding effect */
+  height: calc(
+    100% - 16px
+  ); /* Slightly shorter than the input for padding effect */
   background-color: #6415ff;
   border: none;
   color: #fff;
@@ -377,12 +376,10 @@ header .row {
   transition: all 300ms ease; /* Smooth hover effect */
 }
 
-
 .header__email--btn:hover {
   background-color: rgba(80, 17, 204);
 }
 /* Darker purple when hovered */
-
 
 /* Email input field */
 .header__email--input {
@@ -437,7 +434,6 @@ header .row {
   opacity: 0.5; /* lighter, subtle look */
 }
 
-
 .header__customers--title {
   margin-top: 80px;
   color: #a0aec0;
@@ -447,96 +443,101 @@ header .row {
 }
 /* "OUR CUSTOMERS" style text, uppercase, small and spaced out */
 
-
-
 /* 
 ---------------------------------------------------------------------------------
 FEATURES ↓
 ---------------------------------------------------------------------------------
 */
 
+/* FEATURES SECTION CONTAINER */
 #features {
-  position: relative;
+  position: relative; /* Needed for absolutely positioned blobs inside */
 }
- /* Makes the features section a positioned element */
 
+/* NARROW ROW INSIDE FEATURES (CENTERS CONTENT) */
 #features .row__narrow {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: flex; /* Flex layout for vertical alignment */
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center horizontally */
 }
-/* Lays out content in a vertical column and centers everything horizontally */
 
-#features .section__title {
-  text-align: center;
+/* SECTION TITLES (FEATURES + PRICING) */
+#features .section__title,
+#pricing .section__title {
+  text-align: center; /* Center titles for both sections */
 }
-/* Centers the main "We have amazing Service." text */
 
+/* SECTION PARAGRAPH STYLING */
 #features .section__para {
-  text-align: center;
-  max-width: 576px;
+  text-align: center; /* Center text */
+  max-width: 576px; /* Limit line length for readability */
 }
-/* Centers and limits the width of the intro paragraph so it doesn’t stretch too wide */
 
+/* FEATURES CONTAINER FOR FEATURE ITEMS */
 .features {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 40px;
+  display: flex; /* Flex layout to place multiple features in row */
+  flex-wrap: wrap; /* Wrap to next line on smaller screens */
+  margin-top: 40px; /* Space above the features */
 }
-/* Makes the features into a flexbox row, wraps them to the next line if they don’t fit, and adds space above */
 
+/* INDIVIDUAL FEATURE BLOCK */
 .feature {
-  width: calc(100% / 3);
+  width: calc(100% / 3); /* Three features per row by default */
 }
-/* Each feature takes up 1/3 of the row’s width (so 3 features per row on large screens) */
 
+/* ROW INSIDE EACH FEATURE (IMAGE + TEXT) */
 .feature__row {
-  display: flex;
-  align-items: flex-start;
-  padding: 32px 24px;
+  display: flex; /* Flex row for image + text side by side */
+  align-items: flex-start; /* Align items to top */
+  padding: 32px 24px; /* Padding inside each feature row */
 }
-/* Lays out icon + text side by side (row)  with padding around each feature item */
 
+/* IMAGE WRAPPER (ROUND BACKGROUND FOR ICON) */
 .feature__img--wrapper {
-  display: flex;
-  padding: 20px;
-  border: 1px solid #e5e7eb;
-  border-radius: 500px;
+  display: flex; /* Center icon inside wrapper if needed */
+  padding: 20px; /* Space around the icon */
+  border: 1px solid #e5e7eb; /* Light border */
+  border-radius: 500px; /* Fully rounded circle */
 }
-/* Wraps the feature icon in a circular, bordered container */
 
+/* FEATURE ICON */
 .feature__img {
-  width: 24px;
-  height: 24px;
+  width: 24px; /* Small icon width */
+  height: 24px; /* Small icon height */
 }
-/* Keeps feature icons small and consistent in size */
 
+/* TEXT NEXT TO ICON */
 .feature__text {
-  margin-top: 8px;
-  margin-left: 16px;
+  margin-top: 8px; /* Small space on top if needed */
+  margin-left: 16px; /* Space between icon and text */
 }
-/* Adds space between the icon and the text (shifts text down slightly and to the right of icon) */
 
+/* FEATURE DESCRIPTION PARAGRAPH */
 .feature__para {
-  margin-top: 16px;
+  margin-top: 16px; /* Space below the feature title */
   font-size: 16px;
-  max-width: calc(634px / 3);
-  color: rgb(124, 139, 161);
-  line-height: 2;
-  font-weight: 500;
-}
-/* Styles the description under each feature: gray text, slightly spaced out lines, medium weight, 
-     and capped width so it stays neat */
-
-.services {
-  display: flex;
-  flex-wrap: wrap;
-  width: calc(100% / 3);
+  max-width: calc(634px / 3); /* Limit width for readability */
+  color: rgb(124, 139, 161); /* Light gray text */
+  line-height: 2; /* Line spacing for readability */
+  font-weight: 500; /* Medium weight */
 }
 
-.service__description {
-  display: flex;
-  flex-direction: column;
+/* BACKGROUND BLOBS INSIDE FEATURES */
+.features__blob {
+  transform: translateX(96px) translateY(192px) scaleX(1) scaleY(1); /* Position & scale */
+  position: absolute; /* Absolute to float over container */
+  right: 0;
+  bottom: 0;
+  width: 16rem; /* Size of blob */
+  opacity: 0.25; /* Semi-transparent */
+  padding: 16px; /* Optional inner spacing */
+}
+
+/* NARROW ROW GLOBAL STYLING (USED IN FEATURES) */
+.row__narrow {
+  width: 100%; /* Full width inside container */
+  max-width: 1024px; /* Limit width */
+  margin: 0 auto; /* Center row horizontally */
 }
 
 /* 
@@ -544,82 +545,72 @@ FEATURES ↓
 QUALITY WORK ↓
 ------------------------------------------------------------------------------------------
 */
+/* QUALITY WORK SECTION */
 
-
-/* Styles the row inside the quality section */
+/* ROW CONTAINER */
 #quality .row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: flex; /* Flex layout for aligning children side by side */
+  justify-content: space-between; /* Space out content evenly */
+  align-items: center; /* Vertically center the items */
 }
-/* Lays out the description and image side by side,
-     pushes them apart to opposite ends,
-     and aligns them vertically in the middle */
 
+/* SECTION TITLE FOR QUALITY */
 #quality .section__title {
-  line-height: 1.25;
+  line-height: 1.25; /* Tight line spacing for heading */
 }
-/* Makes the title text tighter (less vertical spacing between lines) */
 
+/* BUTTON IN QUALITY SECTION */
 #quality .btn {
-  margin-top: 32px;
+  margin-top: 32px; /* Space above button to separate from other content */
 }
-/* Pushes the button down by 32px.*/
 
+/* DESCRIPTION TEXT BLOCK */
 .quality__description {
-  max-width: 756px;
-  margin-right: 64px;
+  max-width: 576px; /* Limit line length for readability */
+  margin-right: 64px; /* Space to the right, giving room for image */
 }
-/* Keeps the description text from getting too wide,
-     and adds spacing to the right so it’s not stuck to the image */
 
-.quality_img--wrapper {
-  border-radius: 4px;
-  border: 1px solid rgb(229, 231, 235);
-  position: relative; /* allows absolutely positioned children */
-  margin: 0 56px;
-  z-index: 2;
-  display: flex;
+/* DESCRIPTION + IMAGE WRAPPER BOTH TAKE HALF WIDTH */
+.quality__description,
+.quality__img--wrapper {
+  width: 50%; /* Half width for side-by-side layout */
 }
-/* Creates a box around the image (slightly rounded with a gray border),
-     and establishes a "positioned parent" so child elements like
-     .quality__grid can be absolutely placed inside */
 
+/* IMAGE WRAPPER STYLING */
+.quality__img--wrapper {
+  border-radius: 4px; /* Slightly rounded corners */
+  border: 1px solid rgb(229, 231, 235); /* Light border for definition */
+  position: relative; /* Needed for absolute children like grid */
+  margin: 0 56px; /* Horizontal margin */
+  z-index: 2; /* Above decorative elements */
+  display: flex; /* Flex in case you need to center the image inside */
+}
+
+/* DECORATIVE GRID ELEMENT */
 .quality__grid {
-  transform: translateX(50%) translateY(50%) scaleX(1) scaleY(1);
-  width: 80px;
+  transform: translateX(50%) translateY(50%) scaleX(1) scaleY(1); /* Position & scale */
+  width: 80px; /* Size of the decorative grid */
   height: 80px;
-  position: absolute;
-  right: 0px;  /* stick to right */
-  bottom: 0px;  /* stick to bottom */
-  fill: rgb(100, 21, 255);
+  position: absolute; /* Float above/below image wrapper */
+  right: 0px; /* Anchored to bottom right of wrapper */
+  bottom: 0px;
+  fill: rgb(100, 21, 255); /* Grid color */
   --tw-text-opacity: 1;
   color: rgba(100, 21, 255, var(--tw-text-opacity));
-  z-index: 0;
+  z-index: 0; /* Behind main image */
   display: block;
 }
-/* This is the little purple dots SVG background that sits 
-     in the bottom-right corner of the image wrapper */
 
+/* IMAGE ITSELF */
 .quality__img {
-  z-index: 1;
+  z-index: 1; /* On top of decorative grid but below wrapper border */
 }
- /* The main image sits above the dots because it has a higher z-index */
-
-
-/* .quality_img--wrapper = container box for the image.
-
-.quality__img = the actual image (sits on top).
-
-.quality__grid = the purple dots SVG, placed in the bottom-right corner, behind the image.*/
-
 
 /* 
 ------------------------------------------------------------------------------------------
 STEPS ↓
 ------------------------------------------------------------------------------------------
 */
-
 
 /* Layout for the Steps section row 
    - Uses flexbox to align image and description side by side */
@@ -630,7 +621,6 @@ STEPS ↓
 }
 /* already have a global .row (width, max-width, margin).
 This one adds flex layout rules, so it’s not a duplicate — it’s unique to #steps. */
-
 
 /* Wrapper for the steps image 
    - Makes it flex for alignment and positions child SVG grid */
@@ -692,7 +682,7 @@ This one adds flex layout rules, so it’s not a duplicate — it’s unique to 
   margin-top: 12px;
   line-height: 2;
   font-weight: 500;
-} 
+}
 
 /* Decorative SVG grid background behind the steps image */
 .steps__grid {
@@ -708,59 +698,504 @@ This one adds flex layout rules, so it’s not a duplicate — it’s unique to 
   fill: currentColor;
 }
 
-
 /* 
 -------------------------------------------------------------------------------------------
 VALUES ↓
 -------------------------------------------------------------------------------------------
 */
 
+/* Flex layout for values section: text on left, image on right */
 #values .row {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; /* vertically center both */
 }
 
+/* Title inside values section */
 #values .section__title {
   line-height: 1.25;
 }
 
-/*
-
-PRICING ↓
-
-*/
-
-#pricing .row {
+/* Each individual value block (Affordable, Professionalism, etc.) */
+.value {
+  margin-top: 2rem;
+  margin-right: 2rem;
+  align-items: flex-start;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* stack title + para vertically */
+}
+
+/* Spacing above the Learn More button */
+#values .btn {
+  margin-top: 48px;
+}
+
+/* Text container on left side */
+.values__description,
+.values__img {
+  width: 50%;
+}
+
+/* Background circle color for first value icon */
+.value:nth-child(1),
+.value__img--wrapper {
+  background-color: #9ae6b4; /* light green */
+}
+
+/* Background circle color for second value icon */
+.value:nth-child(2),
+.value__img--wrapper {
+  background-color: #feb2b2; /* light red */
+}
+
+/* First value card spacing */
+.value:nth-of-type(1) {
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+/* Second value card spacing */
+.value:nth-of-type(2) {
+  margin-top: 32px;
+}
+
+/* Text container (left) & image container (right) take 50% each */
+.values__description,
+.values__img {
+  width: 50%;
+}
+
+.value__img {
+  width: 20px;
+  height: 20px;
+}
+
+.values__description {
+  padding: 32px 64px 32px 0;
+}
+
+/* Values list container (holds the 2 values side by side) */
+.values__list {
+  display: flex; /* values aligned horizontally */
+}
+
+/* Title container inside value block (icon + label) */
+.value__title {
+  display: flex;
   align-items: center;
 }
+
+/* Circle wrapper around SVG icons */
+.value__img--wrapper {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Value name text (Affordable, Professionalism, etc.) */
+.value__name {
+  margin-left: 12px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #243e63; /* dark blue-gray */
+}
+
+/* Description under each value */
+.value__para {
+  margin-top: 16px;
+  line-height: 1.625;
+  color: #718096; /* medium gray */
+}
+
+/*
+-------------------------------------------------------------------------------------------------
+PRICING ↓
+--------------------------------------------------------------------------------------------------
+*/
 
 #pricing .section__title {
   text-align: center;
 }
 
-.plans {
-  display: flex;
-  flex-wrap: wrap;
+/* PRICING SECTION ROW */
+#pricing .row {
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack child elements vertically */
+  align-items: center; /* Center horizontally */
 }
 
+/* SECTION PARAGRAPH STYLING */
+#pricing .section__para {
+  max-width: 576px; /* Limit paragraph width for readability */
+  text-align: center; /* Center the text */
+}
+
+/* INDIVIDUAL PLAN CARD */
 .plan {
+  position: relative; /* For positioning stripe and overlay elements */
+  margin-top: 4rem; /* Space between plans and above content */
+  display: flex; /* Flex container for inner elements */
+  width: 100%; /* Full width of container (max-width limits size) */
+  max-width: 24rem; /* Prevent card from growing too wide */
+  flex-direction: column; /* Stack content vertically */
+  border-radius: 0.5rem; /* Rounded corners */
+  background-color: rgb(255 255 255); /* White background */
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-right: 2rem;
+  padding-top: 0.5rem;
+  text-align: center; /* Center text by default */
+  color: rgb(26 32 44); /* Base text color */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px; /* Subtle shadows */
+}
+
+/* STRIPE AT THE TOP OF PLAN CARD */
+.plan__stripe {
+  position: absolute; /* Position at top of card */
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  height: 0.5rem; /* Height of stripe */
+  border-top-left-radius: 0.5rem; /* Match card rounding */
+  border-top-right-radius: 0.5rem;
+}
+
+/* TOP SECTION OF PLAN (NAME, PRICE, DURATION) */
+.plan__top {
   display: flex;
-  flex-direction: column;
-  width: calc(100% / 3);
-  padding: 24px;
+  flex-direction: column; /* Stack name, price, duration */
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  text-transform: uppercase; /* All caps for emphasis */
+  line-height: 1.625; /* Space between lines */
+}
+
+/* MIDDLE SECTION (TARGET AUDIENCE + FEATURES) */
+.plan__middle {
+  margin-left: -2rem; /* Align with card edges */
+  margin-right: -2rem;
+  display: flex;
+  flex: 1 1 0%; /* Flexible growth */
+  flex-direction: column; /* Stack features vertically */
+  border-top-width: 2px; /* Top border for separation */
+  border-bottom-width: 2px; /* Bottom border */
+  padding: 2rem; /* Inner spacing */
+}
+
+/* BOTTOM SECTION (BUTTON) */
+.plan__bottom {
+  padding-left: 4rem;
+  padding-right: 4rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* PLAN TEXT STYLING */
+.plan__name,
+.plan__price,
+.plan__duration {
+  font-weight: bold;
+  line-height: 1.625;
+}
+
+.plan__name {
+  font-size: 20px;
+}
+
+.plan__price {
+  font-size: 48px;
+  margin: 4px 0;
+}
+
+.plan__duration {
+  font-size: 16px;
+  letter-spacing: 0.1em;
+}
+
+/* FEATURE TEXT */
+.plan__feature {
+  margin-top: 20px;
+  font-weight: 500;
+  color: #718096;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* PLAN TARGET / AUDIENCE */
+.plan__target {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.025em;
+}
+
+/* BUTTON STYLING */
+.plan__button {
+  border-radius: 9999px; /* Fully rounded button */
+  background-color: rgb(100 21 255);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-weight: 700;
+  color: rgb(247 250 252);
+  transition: all 300ms ease;
+  width: 100%; /* Full width button */
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* BUTTON HOVER EFFECT */
+.plan__button:hover {
+  transform: translate(1px, -1px);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+
+/* FIRST PLAN STRIPE + BUTTON COLORS */
+.plan:nth-child(1) .plan__stripe,
+.plan:nth-child(1) .plan__button {
+  color: #f7fafc;
+  background: linear-gradient(
+    115deg,
+    rgb(56, 178, 172) 0%,
+    rgb(129, 230, 217) 100%
+  );
+}
+
+/* SECOND PLAN CARD BACKGROUND */
+.plan:nth-child(2) {
+  background: linear-gradient(
+    135deg,
+    rgb(76, 81, 191) 0%,
+    rgb(102, 126, 234) 100%
+  );
+}
+
+/* SECOND PLAN BUTTON */
+.plan:nth-child(2) .plan__button {
+  color: #6415ff;
+  background-color: #f7fafc;
+}
+
+/* STRIPE HIDDEN FOR SECOND PLAN */
+.plan:nth-child(2) .plan__stripes {
+  visibility: hidden;
+}
+
+/* THIRD PLAN STRIPE + BUTTON COLORS */
+.plan:nth-child(3) .plan__stripe,
+.plan:nth-child(3) .plan__button {
+  color: #f7fafc;
+  background: linear-gradient(
+    115deg,
+    rgb(245, 101, 101) 0%,
+    rgb(254, 178, 178) 100%
+  );
+}
+
+/* ODD PLANS TEXT COLOR */
+.plan:nth-child(odd) .plan__name,
+.plan:nth-child(odd) .plan__price,
+.plan:nth-child(odd) .plan__target {
+  color: #1a202c;
+}
+
+.plan:nth-child(odd) .plan__duration {
+  color: #a0aec0;
+}
+
+/* SECOND PLAN TEXT COLORS */
+.plan:nth-child(2) .plan__name,
+.plan:nth-child(2) .plan__price,
+.plan:nth-child(2) .plan__target,
+.plan:nth-child(2) .plan__duration,
+.plan:nth-child(2) .plan__feature {
+  color: #f7fafc;
+}
+
+/* BORDER FOR MIDDLE SECTIONS */
+.plan:nth-child(1) .plan__middle,
+.plan:nth-child(3) .plan__middle {
+  border-top: 2px solid rgb(229, 231, 235);
+  border-bottom: 2px solid rgb(229, 231, 235);
+}
+
+.plan:nth-child(2) .plan__middle {
+  border-top: 2px solid rgb(102, 126, 234);
+  border-bottom: 2px solid rgb(102, 126, 234);
+}
+
+/* BACKGROUND BLOB SHAPE */
+.plans__blob {
+  z-index: -10;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: translateX(-50%) translateY(50%) scaleX(1) scaleY(1);
+  height: 256px;
+  width: 256px;
+  opacity: 0.25;
+}
+
+/* CONTAINER FOR ALL PLANS */
+.plans {
+  display: flex; /* Horizontal layout for plans */
+  position: relative; /* For absolute blob positioning */
+  flex-direction: row; /* Arrange plans in a row */
+  width: 100%;
+  justify-content: space-between; /* Space evenly */
 }
 
 /* 
-
+-------------------------------------------------------------------------------------------
 TESTIMONIALS ↓
-
+-------------------------------------------------------------------------------------------
 */
 
+/* ROW CONTAINER FOR FLEX LAYOUT */
 #testimonials .row {
-  display: flex;
+  margin-left: auto;
+  margin-right: auto; /* Center the row horizontally */
+  max-width: 1280px; /* Limit width for readability */
+  display: flex; /* Horizontal layout */
+  align-items: center; /* Vertically center items */
+  justify-content: space-between; /* Space between image and description */
+}
+
+/* IMAGE AND DESCRIPTION SPLIT */
+.testimonials__img,
+.testimonials__description {
+  width: 50%; /* Half the container each */
+}
+
+/* DESCRIPTION BLOCK */
+.testimonials__description {
+  display: flex; /* Flex layout for content stacking */
+  flex-direction: column; /* Stack title, text, rating vertically */
+  padding-left: 64px; /* Space from the image */
+}
+
+/* SECTION TITLE */
+#testimonials .section__title {
+  margin-bottom: 24px; /* Space below title */
+  line-height: 1.25; /* Tight line spacing */
+}
+
+/* INDIVIDUAL TESTIMONIAL */
+.testimonial {
+  margin-top: 40px; /* Space between multiple testimonials */
+}
+
+/* STAR RATING */
+.testimonial__rating {
+  color: rgba(246, 173, 85); /* Gold color for stars */
+  margin-right: 2px; /* Space between stars */
+  margin-top: 4px; /* Space above rating */
+}
+
+.testimonial__title {
+  margin-top: 16px;
+}
+
+/* NAME OF PERSON GIVING TESTIMONIAL */
+.testimonial__title,
+.testimonial__name {
+  color: #4a5568;
+  line-height: 1.625;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+/* TESTIMONIAL TEXT */
+.testimonial__para {
+  margin-top: 1rem; /* Space above text */
+  margin-bottom: 2rem; /* Space below text */
+  font-weight: 500; /* Medium font weight */
+  line-height: 1.625; /* Readable line spacing */
+  font-size: 16px; /* Standard text size */
+  color: rgb(74 85 104); /* Gray text */
+}
+
+/* BOTTOM PART OF TESTIMONIAL: PROFILE AND NAVIGATION BUTTONS */
+.testimonial__bottom {
+  display: flex; /* Horizontal layout */
+  justify-content: space-between; /* Space between profile and buttons */
+}
+
+/* PROFILE CONTAINER */
+.testimonial__profile {
+  display: flex; /* Align avatar and details horizontally */
+  align-items: center; /* Vertical center alignment */
+}
+
+/* PROFILE DETAILS (NAME + ROLE) */
+.testimonial__details {
+  margin-left: 24px; /* Space between avatar and text */
+}
+
+/* PROFILE IMAGE */
+.testimonial__img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%; /* Circular avatar */
+}
+
+/* ROLE / POSITION OF PERSON */
+.testimonial__role {
+  color: #7c8ba1; /* Grayish text */
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* TESTIMONIAL NAVIGATION BUTTONS CONTAINER */
+.testimonial__buttons {
+  display: flex; /* Align buttons horizontally */
+  align-items: center; /* Vertically center buttons */
+}
+
+/* BUTTON ICONS (SVG) SIZE */
+.testimonial__button svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* INDIVIDUAL BUTTON */
+.testimonial__button {
+  display: flex; /* Center SVG inside circle */
+  justify-content: center;
+  align-items: center;
+  padding: 16px; /* Space inside circle */
+  background: #edf2f7; /* Light gray background */
+  border-radius: 50%; /* Circular shape */
+  margin: 0 12px; /* Space between buttons */
+  transition: all 300ms ease; /* Smooth hover effect */
+}
+
+/* BUTTON HOVER EFFECT */
+.testimonial__button:hover {
+  background-color: rgb(229, 231, 235); /* Slightly darker gray */
+}
+
+/* STAR ICONS */
+.fa-star {
+  color: rgb(246 173 85); /* Gold */
+  display: inline-block;
+  height: 1.25rem;
+  width: 1.25rem;
+}
+
+/* VERTICAL DIVIDER BETWEEN ELEMENTS */
+.divider {
+  margin-top: 0.75rem; /* Space above */
+  margin-bottom: 0.75rem; /* Space below */
+  border-right-width: 1px; /* Vertical line width */
+  width: 0.5px; /* Very thin line */
+  background-color: #edf2f7; /* Light gray */
+  height: 20px; /* Line height */
 }
 
 /* 
@@ -769,9 +1204,123 @@ START / CALL TO ACTION ↓
 
 */
 
+/* MAIN TAG STYLING FOR SPACING */
+main {
+  margin-bottom: 96px; /* Space below the main section */
+}
+
+/* START SECTION CONTAINER */
+.start__container {
+  padding: 96px 0; /* Vertical padding inside section */
+  width: 100%; /* Full width container */
+  background-color: rgb(100, 21, 255); /* Purple background */
+  border-radius: 8px; /* Rounded corners */
+  display: flex; /* Flex container for centering content */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+/* ROW INSIDE START SECTION */
+.start__row {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1024px; /* Limit row width */
+  padding: 0 32px; /* Horizontal padding inside row */
+  display: flex;
+  justify-content: center; /* Center child elements horizontally */
+  align-items: center; /* Center child elements vertically */
+}
+
+/* SPLIT CONTENT: TITLE + BUTTONS */
+.start__title,
+.start__buttons {
+  width: 50%; /* Half of the row each */
+}
+
+/* BUTTON CONTAINER */
+.start__buttons {
+  display: flex;
+  justify-content: flex-end; /* Align buttons to the right side */
+}
+
+/* TITLE STYLING */
+.start__title {
+  color: #f7fafc; /* White-ish text */
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.5;
+  z-index: 2; /* Above blobs/background */
+}
+
+/* INDIVIDUAL BUTTON STYLING */
+.start__button {
+  padding: 20px 40px;
+  border-radius: 500px; /* Fully rounded pill shape */
+  font-weight: 700;
+  font-size: 16px;
+  color: #f7fafc; /* Default text color */
+  line-height: 1.5;
+  letter-spacing: 0.025em;
+  margin: 1px;
+  z-index: 2; /* Above blob background */
+}
+
+/* FIRST BUTTON (PRIMARY) */
+.start__button:nth-child(1) {
+  background: #f56565; /* Red gradient button */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  margin-right: 32px; /* Space between buttons */
+  transition: all 300ms ease; /* Smooth hover effects */
+}
+
+/* HOVER FOR PRIMARY BUTTON */
+.start__button:hover:nth-child(1) {
+  background-color: rgba(229, 62, 62); /* Slightly darker on hover */
+}
+
+/* SECOND BUTTON (SECONDARY) */
+.start__button:nth-child(2) {
+  border: 1px solid rgb(160, 174, 192); /* Outline style */
+  transition: all 300ms ease;
+}
+
+/* HOVER FOR SECONDARY BUTTON */
+.start__button:hover:nth-child(2) {
+  background-color: rgba(247, 250, 252); /* White background on hover */
+  color: rgba(100, 21, 255); /* Purple text on hover */
+}
+
+/* ROW SPECIFIC STYLING FOR START SECTION */
 #start .row {
-  position: relative;
-  overflow: hidden;
+  position: relative; /* For positioning blob SVGs */
+  overflow: hidden; /* Hide overflowing blobs */
+}
+
+/* BACKGROUND BLOBS FOR START SECTION */
+
+/* BOTTOM LEFT BLOBS */
+.start__blob--1 {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  height: 20rem;
+  width: 20rem;
+  transform: translate(-5rem, 8rem);
+  color: rgb(80 17 204);
+  opacity: 0.5; /* Semi-transparent */
+}
+
+/* TOP RIGHT BLOBS */
+.start__blob--2 {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 20rem;
+  width: 20rem;
+  transform: translate(5rem, -16rem);
+  color: rgb(80 17 204);
+  opacity: 0.5; /* Semi-transparent */
 }
 
 /* 
@@ -780,26 +1329,165 @@ FOOTER ↓
 
 */
 
+/* FOOTER BASE STYLING */
 footer {
-  padding: 96px 32px;
-  background-color: rgb(100, 21, 255);
-  margin-bottom: -32px;
-  position: relative;
-  overflow: hidden;
+  padding: 96px 32px; /* Space inside the footer */
+  background-color: rgb(100, 21, 255); /* Footer background color */
+  margin-bottom: -32px; /* Pulls footer slightly down to overlap content */
+  position: relative; /* Allows absolute positioning for blobs */
+  overflow: hidden; /* Prevents blobs from overflowing */
 }
 
+/* FOOTER COLUMNS CONTAINER */
+.footer__columns {
+  margin-top: -48px; /* Adjusts vertical spacing */
+  display: flex; /* Arrange columns in a row */
+  justify-content: space-between; /* Even spacing between columns */
+  flex-wrap: wrap; /* Allows columns to wrap on smaller screens */
+}
+
+/* INDIVIDUAL COLUMN */
 .footer__column {
-  margin-top: 48px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  z-index: 2;
+  margin-top: 48px; /* Space between top of footer and column */
+  display: flex; /* Flex layout for column content */
+  flex-direction: column; /* Stack items vertically */
+  align-items: flex-start; /* Align items to the left */
+  z-index: 2; /* Keeps columns above decorative blobs */
 }
 
-.footer__info {
-  display: flex;
-  justify-content: space-between;
+/* COLUMN TITLE */
+.footer__column--title {
+  font-weight: 700; /* Bold titles */
+  color: #f7fafc; /* White-ish text */
+  line-height: 1.5; /* Readable line spacing */
+}
+
+/* COLUMN LINKS */
+.footer__column--link {
+  color: #f7fafc; /* White-ish text */
+  font-size: 14px; /* Small, readable text */
+  margin-top: 12px; /* Spacing between links */
+  line-height: 1.5;
+  font-weight: 500;
+  position: relative; /* Needed for pseudo-element underline */
+  cursor: pointer;
+}
+
+/* HOVER UNDERLINE EFFECT */
+.footer__column--link:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px; /* Position of underline */
+  height: 2px;
+  width: 100%;
+  background: #fff; /* White underline */
+  transition: all 300ms ease;
+  opacity: 0; /* Hidden by default */
+}
+
+.footer__column--link:hover:after {
+  opacity: 1; /* Show underline on hover */
+}
+
+/* Adjust spacing for the second child link */
+.footer__column--link:nth-child(2) {
+  margin-top: 24px;
+}
+
+/* FOOTER DIVIDER - separates columns from bottom section */
+.footer__divider {
+  width: 100%; /* Full width of footer */
+  height: 2px; /* Thickness of divider */
+  margin: 64px 0; /* Spacing above and below */
+  background: rgb(116, 44, 255); /* Purple line color */
+}
+
+/* FOOTER BOTTOM - logo, copyright, socials container */
+.footer__bottom {
+  display: flex; /* Arrange logo, copyright, and socials in a row */
+  justify-content: space-between; /* Space between each section */
+  align-items: center; /* Vertical alignment */
+}
+
+/* LOGO CONTAINER */
+.footer__logo {
+  display: flex; /* Horizontal layout for image and text */
+  align-items: center; /* Vertically center logo and text */
+}
+
+/* LOGO IMAGE */
+.footer__logo--img {
+  height: 32px;
+  width: 32px;
+}
+
+/* LOGO TEXT */
+.footer__logo--text {
+  font-size: 20px;
+  color: #f7fafc;
+  font-weight: 900;
+  margin-left: 8px; /* Space between image and text */
+  letter-spacing: 0.05em; /* Slight spacing between letters */
+}
+
+/* SOCIAL ICONS CONTAINER */
+.footer__socials {
+  display: flex; /* Arrange social icons in a row */
   align-items: center;
+  margin-left: -16px; /* Align first icon correctly */
+}
+
+/* SOCIAL ICON SVG SIZE */
+.footer__social--link svg {
+  height: 16px;
+  width: 16px;
+}
+
+/* SOCIAL LINK BUTTONS */
+.footer__social--link {
+  margin-left: 16px; /* Space between icons */
+  padding: 8px; /* Space inside circle */
+  background: #f7fafc; /* White background */
+  display: flex;
+  justify-content: center; /* Center SVG inside circle */
+  border-radius: 50%; /* Make circle */
+  z-index: 2; /* Above blobs */
+  cursor: pointer;
+  transition: all 300ms ease; /* Smooth hover effect */
+}
+
+.footer__social--link:hover {
+  background-color: rgba(203, 213, 224); /* Slightly darker on hover */
+}
+
+/* COPYRIGHT TEXT */
+.footer__copyright {
+  color: #cbd5e0;
+  font-weight: 500;
+}
+
+/* BACKGROUND BLOBS */
+.footer__blob--1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 320px;
+  height: 320px;
+  transform: translateX(-80px) translateY(-128px); /* Position blob */
+  z-index: 1; /* Behind content */
+  opacity: 0.5;
+}
+
+.footer__blob--2 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 320px;
+  height: 320px;
+  transform: translateX(128px) translateY(192px); /* Position blob */
+  z-index: 1; /* Behind content */
+  opacity: 0.5;
 }
 
 /* 
@@ -812,45 +1500,515 @@ MOBILE RESPONSIVENESS ↓
   header .row {
     align-items: flex-end;
   }
+
+  .steps__grid {
+    height: 5rem;
+    width: 5rem;
+    bottom: -50px;
+  }
+  h1 {
+    font-size: 36px;
+    color: #1a202c;
+    line-height: 1.25;
+  }
+  .header__description--para {
+    font-size: 16px;
+  }
+  .header__customers {
+    padding-right: 64px;
+  }
+  .header__img--wrapper {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .header__img {
+    max-width: 512px;
+  }
+  .plan__button {
+    max-width: none;
+  }
+
+  .plan__bottom {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .testimonials__img {
+    width: 40%;
+  }
+  .testimonials__description {
+    width: calc(100% - 40%);
+  }
 }
 
+/* 
+  1024px-SPECIFIC STYLES------------------------------------------------------------------
+  */
+
 @media (max-width: 1024px) {
+  /* Hide normal nav links (switch to hamburger menu) */
+  .nav__links {
+    display: none;
+  }
+
+  /* Show hamburger menu button */
   .btn__menu {
     display: block;
   }
+
+  /* Stack header content vertically and center it */
   header .row {
     flex-direction: column;
     align-items: center;
   }
+
+  /* Make header text & image full width but limited to 512px and centered */
+  .header__description,
+  .header__img--wrapper {
+    width: 100%;
+    max-width: 512px;
+    margin: 0 auto;
+  }
+
+  /* Center-align header description text and stack it vertically */
+  .header__description {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Shrink hero heading */
+  h1 {
+    font-size: 30px;
+  }
+
+  /* Add spacing around hero paragraph */
+  .header__description--para {
+    margin: 20px 0;
+  }
+
+  /* Remove extra padding from customers section */
+  .header__customers {
+    padding-right: 0px;
+  }
+
+  /* Add top margin to customers title and hero image */
+  .header__customers--title,
+  .header__img--wrapper {
+    margin-top: 48px;
+  }
+
+  /* Limit feature section width */
+  .features {
+    max-width: 768px;
+  }
+
+  /* Display 2 features per row (50% width each) */
+  .feature {
+    width: calc(50%);
+  }
+
+  /* Tighten feature titles */
+  .feature__title {
+    line-height: 1;
+  }
+
+  /* Adjust feature row padding/margin */
+  .feature__row {
+    padding: 32px 8px;
+    margin: 0 16px;
+  }
+
+  /* Allow feature paragraph text to span full width */
+  .feature__para {
+    max-width: none;
+  }
+
+  /* Slightly increase section paragraph font size */
+  .section__para {
+    font-size: 16px;
+  }
+
+  /* Shrink section titles */
+  .section__title {
+    font-size: 36px;
+  }
+
+  /* Reset margins, add right padding to quality description */
+  .quality__description {
+    margin-right: 0px;
+    padding-right: 48px;
+  }
+
+  /* Add spacing between values */
+  .value {
+    margin-top: 2.5rem;
+  }
+
+  /* Stack values vertically and restrict list width */
+  .values__list {
+    max-width: 20rem;
+    flex-direction: column;
+  }
+
+  /* Stack pricing plans vertically, center them */
+  .plans {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Remove side margins on plan cards */
+  .plan {
+    margin-right: 0px;
+  }
+
+  /* Enlarge section titles for features & pricing */
+  #features .section__title,
+  #pricing .section__title {
+    font-size: 48px;
+  }
+
+  /* Add vertical padding around testimonials */
+  #testimonials .container {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  /* Add left padding to testimonials text */
+  .testimonials__description {
+    padding-left: 48px;
+  }
+
+  /* Add vertical padding around start section */
+  #start .container {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  /* Stack start section content vertically */
+  .start__row {
+    flex-direction: column;
+  }
+
+  /* Center start title and restrict width */
+  .start__title {
+    text-align: center;
+    width: 100%;
+    max-width: 512px;
+  }
+
+  /* Adjust button container width & spacing */
+  .start__buttons {
+    width: auto;
+    margin-top: 24px;
+  }
+
+  /* Make start buttons larger for tapping */
+  .start__button {
+    padding: 16px 32px;
+  }
+
+  /* Add padding inside footer */
   footer {
     padding: 80px 32px;
   }
 }
 
-@media (max-width: 768px) {
+
+
+
+/* 
+  TABLET-SPECIFIC STYLES------------------------------------------------------------------
+  */
+@media (max-width: 768px) { 
+
+    /* Hide normal nav links (switch to hamburger menu) */
+  .nav__links {
+    display: none;
+  }
+
+  /* Show hamburger menu button */
+  .btn__menu {
+    display: block;
+  }
+
+  .features {
+    justify-content: center; /* Centers all feature items in the row */
+  }
+
+  .feature {
+    width: auto; /* Removes fixed width so features shrink naturally */
+    max-width: 384px; /* Prevents features from stretching too wide */
+  }
+
+  .section__para {
+    font-size: 14px; /* Slightly smaller paragraph text for tablets */
+  }
+
   #quality .row,
   #values .row {
-    flex-direction: column-reverse;
+    flex-direction: column-reverse; /* Stacks image/text vertically, with image below text */
   }
+
+  .quality__description,
+  .steps__description,
+  .values__description,
+  .testimonials__description {
+    padding: 0; /* Removes default padding */
+    margin-top: 64px; /* Pushes description down below the image */
+    text-align: center; /* Centers text inside description */
+  }
+
+  .quality__description,
+  .quality__img--wrapper,
+  .steps__description,
+  .steps__img--wrapper,
+  .values__description,
+  .values__img,
+  .testimonials__description,
+  .testimonials__img {
+    width: 100%; /* Full width for each element */
+    max-width: 448px; /* But not wider than 448px for readability */
+  }
+
   #steps .row,
   #testimonials .row {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column; /* Stacks steps/testimonials vertically */
   }
+
+  .step {
+    flex-direction: column; /* Step icon and text stacked vertically */
+    align-items: center; /* Center-aligned content */
+  }
+
+  .step__description {
+    margin-top: 12px; /* Adds spacing above text */
+    margin-left: 0; /* Removes left spacing since it's stacked */
+  }
+
+  .values__list {
+    margin-left: auto; /* Centers values list horizontally */
+    margin-right: auto;
+  }
+
+  .value:nth-of-type(1) {
+    margin-right: 0px; /* Removes spacing on the first value block */
+  }
+
+  .value {
+    margin-right: 0px; /* No horizontal spacing between value items */
+    align-items: center; /* Centers icon/text inside each value */
+  }
+
   #pricing .row {
-    margin-top: 40px;
+    margin-top: 40px; /* Adds spacing above pricing section */
+  }
+
+  .testimonials__description {
+    padding-left: 0; /* Removes left padding to center-align */
+  }
+
+  .footer__columns {
+    justify-content: flex-start; /* Aligns footer columns to the left */
+  }
+
+  .footer__column {
+    width: calc(100% / 3); /* Each footer column takes up 1/3 of the width */
+  }
+
+  .footer__bottom {
+    flex-direction: column; /* Stacks copyright + socials */
+    align-items: center; /* Centers them horizontally */
+  }
+
+  .footer__copyright,
+  .footer__socials {
+    margin-top: 32px; /* Adds spacing above both copyright and socials */
+  }
+
+  .footer__socials {
+    margin-left: 0px; /* Removes left spacing so socials are centered */
+  }
+
+  .footer__social--link:first-child {
+    margin-left: 0px; /* Removes unnecessary spacing before the first icon */
   }
 }
 
-@media (max-width: 640px) {
-  .container {
-    padding: 80px 0;
+/*
+  MOBILE-SPECIFIC STYLES------------------------------------------------------------------
+  */
+  @media (max-width: 640px) {
+
+  /* Hide normal nav links (switch to hamburger menu) */
+  .nav__links {
+    display: none;
   }
-  .nav__logo {
-    margin: 8px 0;
-    padding-bottom: 4px;
+
+  /* Show hamburger menu button */
+  .btn__menu {
+    display: block;
   }
-  main {
-    margin-bottom: 80px;
+
+    .section__title {
+      line-height: 1.25; /* Reduces vertical spacing between lines of section titles */
+      font-size: 30px; /* Makes section titles smaller for mobile screens */
+    }
+
+    .container {
+      padding: 80px 0; /* Adds top and bottom spacing inside container */
+    }
+
+    .nav__logo {
+      margin: 8px 0; /* Adjusts logo spacing vertically */
+      padding-bottom: 4px; /* Adds a little space below logo */
+    }
+
+    .header__email {
+      flex-direction: column; /* Stacks input/button vertically instead of side-by-side */
+      height: auto; /* Removes fixed height so content can adjust naturally */
+    }
+
+    .header__email--input {
+      position: static; /* Removes absolute/relative positioning */
+      padding: 16px 0; /* Adds vertical padding */
+      padding-left: 32px; /* Adds space inside left edge */
+      line-height: 1.5; /* Improves readability of text inside input */
+    }
+
+    .header__email--btn {
+      width: 100%; /* Button takes full width */
+      padding: 16px 0; /* More padding for better touch target */
+      margin: 16px 0; /* Adds vertical spacing around button */
+      margin-bottom: 0px; /* Resets bottom margin */
+      line-height: 1.5; /* Ensures text inside button is readable */
+    }
+
+    .header__customers--title {
+      font-size: 14px; /* Smaller font size for subtitle text */
+      letter-spacing: 0.05em; /* Adds a little spacing between letters */
+    }
+
+    #features .section__title,
+    #pricing .section__title {
+      font-size: 36px; /* Larger than general titles to stand out */
+    }
+
+    .feature__row {
+      flex-direction: column; /* Stacks feature items vertically */
+      align-items: center; /* Centers items horizontally */
+      text-align: center; /* Centers text inside */
+    }
+
+    .feature__title {
+      letter-spacing: 0.025em; /* Slight letter spacing */
+      line-height: 1; /* Tightens line spacing */
+    }
+
+    .feature__text {
+      margin-left: 0px; /* Removes side margin */
+      margin-top: 16px; /* Adds spacing above text */
+    }
+
+    .feature__para {
+      margin-top: 4px; /* Small gap above paragraph */
+      line-height: 2; /* Looser spacing for readability */
+    }
+
+    #steps .section__title {
+      margin: 16px 0 0 0; /* Adds margin only on top */
+    }
+
+    .steps__list {
+      margin-top: 48px; /* Pushes step list down */
+    }
+
+    .btn {
+      line-height: 1.5; /* Makes button text easier to read */
+    }
+
+    .plan__price {
+      font-size: 36px; /* Shrinks price text for smaller screens */
+    }
+
+    .plan__bottom {
+      padding: 2rem 1rem; /* Adjusts spacing for tighter fit */
+    }
+
+    .testimonial__para {
+      margin-bottom: 32px; /* Extra spacing below testimonial text */
+    }
+
+    .testimonial__bottom {
+      flex-direction: column; /* Stacks profile + buttons vertically */
+      align-items: center; /* Centers items horizontally */
+      padding-top: 4px; /* Small padding on top */
+    }
+
+    .testimonial__profile {
+      flex-direction: column; /* Profile image + text stacked */
+      align-items: center; /* Center aligned */
+    }
+
+    .testimonial__details {
+      margin-left: 0; /* Removes left margin */
+      margin-top: 8px; /* Adds space above profile details */
+    }
+
+    .testimonial__img {
+      height: 64px; /* Shrinks profile image */
+      width: 64px;
+    }
+
+    .testimonial__buttons {
+      margin-top: 32px; /* Pushes buttons down below profile */
+    }
+
+    .start__title {
+      font-size: 24px; /* Smaller CTA title for mobile */
+    }
+
+    .start__container {
+      padding: 80px 0; /* Reduces vertical padding */
+    }
+
+    .start__buttons {
+      flex-direction: column; /* Stacks buttons vertically */
+    }
+
+    .start__button:nth-child(1) {
+      margin-right: 0; /* Removes right margin when stacked */
+    }
+
+    .start__button {
+      padding: 12px 24px; /* Smaller padding for smaller screens */
+      font-size: 14px; /* Smaller font size */
+    }
+
+    .start__button:nth-child(2) {
+      margin-top: 16px; /* Adds spacing between stacked buttons */
+    }
+
+    main {
+      margin-bottom: 80px; /* Shrinks bottom spacing below main */
+    }
+
+    .footer__columns {
+      justify-content: center; /* Centers footer columns */
+    }
+
+    .footer__column {
+      width: auto; /* Columns shrink to fit content */
+      padding: 0 16px; /* Horizontal padding between columns */
+      text-align: center; /* Centers text inside columns */
+      align-items: center; /* Aligns items in column center */
+    }
+
+    .footer__copyright {
+      font-size: 14px; /* Smaller text for copyright */
+      text-align: center; /* Centers text */
+      line-height: 1.5; /* Readable spacin*/
+    }
+    
   }
-}
+
